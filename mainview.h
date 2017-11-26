@@ -8,6 +8,7 @@ class MainView;
 }
 
 class QTcpServer;
+class QTcpSocket;
 
 class MainView : public QMainWindow
 {
@@ -25,8 +26,11 @@ private slots:
 private:
     Ui::MainView *ui;
     QTcpServer* m_server;
+    QTcpSocket* m_socket;
     bool StartServer();
     void StopServer();
+    void ExchangeData();
+    void EchoReadData();
 };
 
 #endif // MAINVIEW_H
